@@ -33,6 +33,7 @@ android {
             ?: providers.environmentVariable("CAIYUN_TOKEN").orNull
             ?: "REPLACE_WITH_CAIYUN_TOKEN"
         buildConfigField("String", "CAIYUN_TOKEN", caiyunToken.asBuildConfigString())
+
     }
 
     buildFeatures {
@@ -75,5 +76,4 @@ dependencies {
 
     implementation("com.squareup.retrofit2:retrofit:2.11.0")
     implementation("com.squareup.retrofit2:converter-gson:2.11.0")
-    implementation("com.google.android.gms:play-services-location:21.3.0")
 }

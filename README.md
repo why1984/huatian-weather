@@ -5,8 +5,8 @@
 ## 已实现功能
 
 - 当前天气卡片：精确地点、当前温度、天气状况、最高/最低温度、体感温度。
-- 位置能力：支持动态申请定位权限，通过 FusedLocationProviderClient 获取经纬度，并用 Geocoder 转换为地址。
-- 手动搜索：输入城市、街道或地标后，通过 Geocoder 获取经纬度并刷新天气。
+- 位置能力：支持动态申请定位权限，通过 Android 原生 LocationManager 获取当前位置经纬度；地址显示使用系统 Geocoder 尝试解析。
+- 手动搜索：内置国内主要城市离线坐标；系统 Geocoder 可用时，也会尝试搜索更多地点。
 - 天气预警：有预警时展示醒目的 Material 3 横幅，无预警时自动隐藏。
 - 天气数据：综合接口请求 `alert=true&dailysteps=7&hourlysteps=72`。
 - 小时预报：接口拉取未来 72 小时，首页横向展示未来 24 小时温度、天气图标和降水概率。
@@ -46,8 +46,8 @@ sdk.dir=C\:\\Android\\Sdk
 caiyun.token=你的彩云天气Token
 ```
 
-也可以通过 Gradle 属性或环境变量 `CAIYUN_TOKEN` 注入。`app/build.gradle.kts` 会按以下优先级读取：
+也可以通过 Gradle 属性或环境变量注入。`app/build.gradle.kts` 会按以下优先级读取：
 
-本地 `local.properties` > Gradle 属性 `CAIYUN_TOKEN` > 环境变量 `CAIYUN_TOKEN`。
+本地 `local.properties` > Gradle 属性 > 环境变量。
 
 正式发布前建议通过后端下发或安全配置管理 Token。
