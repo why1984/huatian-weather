@@ -13,3 +13,8 @@
 - 日预报：纵向展示未来 7 天预报；若 API 权限或服务端限制返回更短列表，界面会按实际返回天数展示。
 - 状态处理：加载动画、刷新状态、Snackbar 错误提示、重试按钮。
 - 缓存：使用 SharedPreferences 缓存最后一次成功查询结果。
+
+
+## 下载
+
+[点击下载花田天气 APK](https://github.com/why1984/huatian-weather/releases)
